@@ -11,7 +11,7 @@ webName.addEventListener("keyup", function (e) {
     e.target,
     0,
     "Looks Good!",
-    "WebSite Name Must Be At Least 3 Characters Starts With A Letter"
+    "WebSite Name Must Be At Least 3 Characters Starts With A Letter & Not Including (.com, .org, .eg, etc)"
   );
 });
 
@@ -48,34 +48,59 @@ function clearform() {
   webUrl.value = "";
 }
 
+function foundName() {
+  for (var i = 0; i < webSites.length; i++) {
+    if(webName.value.toLowerCase() == webSites[i].name) {
+      return true
+    }else {
+      return false
+    }
+  } 
+}
+
 function addWebSite() {
   if (checkWebName() && checkUrl()) {
     var webSite = {
-      name: webName.value,
-      url: webUrl.value,
+      name: webName.value.toLowerCase(),
+      url: webUrl.value.toLowerCase(),
     };
     if (webSite.url.includes("https://") != true) {
-      webSite.url = "https://" + webUrl.value;
-    }
-    webSites.push(webSite);
-    displayWebSites(webSites);
-    localPush(webSites);
-    clearform();
-    removeValid();
-    Swal.fire({
-      popup: "swal2-show",
-      backdrop: "swal2-backdrop-show",
-      text: "Bookmark Added Successfully",
-      showClass: {
+        webSite.url = "https://" + webUrl.value;
+      }
+    if(foundName() != true) {
+      webSites.push(webSite);
+      displayWebSites(webSites);
+      localPush(webSites);
+      clearform();
+      removeValid();
+      Swal.fire({
         popup: "swal2-show",
-      },
-      hideClass: {
-        popup: "swal2-hide",
-      },
-      icon: "success",
-      showConfirmButton: false,
-      timer: 1000,
-    });
+        backdrop: "swal2-backdrop-show",
+        text: "Bookmark Added Successfully",
+        showClass: {
+          popup: "swal2-show",
+        },
+        hideClass: {
+          popup: "swal2-hide",
+        },
+        icon: "success",
+        showConfirmButton: false,
+        timer: 1000,
+      });
+    } else {
+      Swal.fire({
+        popup: "swal2-show",
+        backdrop: "swal2-backdrop-show",
+        text: "Bookmark Name Already Stored",
+        showClass: {
+          popup: "swal2-show",
+        },
+        hideClass: {
+          popup: "swal2-hide",
+        },
+        icon: "warning",
+      });
+    }
   } else {
     Swal.fire({
       popup: "swal2-show",
