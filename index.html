@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark</title>
+    <!-- Link Favicon -->
+    <link rel="shortcut icon" href="images/bookmark.png" type="image/x-icon" />
+    <!-- Link of Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Link FontAwesome -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- Link Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />\
+    <!-- SweetAlert Libarary Link -->
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+    <!-- SweetAlert Libarary Theme Link -->
+    <link rel="stylesheet" href="css/bulma.min.css">
+    <!-- MyStyle CSS Link -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="py-5">
+      <div class="container">
+        <h1 class="display-5">Bookmarker</h1>
+      </div>
+    </header>
+    <section class="my-3">
+      <div class="container form-section py-3">
+        <h2 class="fs-3">
+          <i class="fa-solid fa-bookmark"></i>
+          Bookmark your favorite sites
+          <i class="fa-solid fa-bookmark"></i>
+        </h2>
+        <form class="row g-4">
+          <div class="col-12">
+            <label for="webName" class="mb-2 fw-bold">
+              <i class="fa-solid fa-book-bookmark pe-2"></i>
+              Site Name
+            </label>
+            <input
+              type="text"
+              name="webName"
+              id="webName"
+              class="form-control mb-2"
+              placeholder="Bookmark Name"
+            />
+            <div class="feedback d-none"></div>
+          </div>
+          <div class="col-12">
+            <label for="webUrl" class="mb-2 fw-bold">
+              <i class="fa-solid fa-link pe-2"></i>
+              Site URL
+            </label>
+            <input
+              type="text"
+              name="webUrl"
+              id="webUrl"
+              class="form-control mb-2"
+              placeholder="Bookmark Name"
+            />
+            <div class="feedback d-none"></div>
+          </div>
+          <button type="button" class="submit btn btn-info w-auto px-5 mx-auto">
+            Submit
+          </button>
+        </form>
+      </div>
+    </section>
+    <section class="data-display py-3">
+      <div class="container overflow-auto">
+        <table class="table text-center text-capitalize">
+          <thead>
+            <tr>
+              <th>index</th>
+              <th>website name</th>
+              <th>visit</th>
+              <th>delete</th>
+            </tr>
+          </thead>
+          <tbody id="dataDisplay"></tbody>
+        </table>
+      </div>
+    </section>
+    <!-- SweetAlert JS Libarary Link -->
+    <script src="js/sweetalert2.min.js"></script>
+    <!-- JS Script Link -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+::selection {
+  background-color: #fec260;
+  color: #000;
+}
+
+body {
+  background-color: #f7ecde;
+  font-family: "PT Sans Caption", sans-serif;
+}
+
+h1 {
+  font-family: "Pacifico", cursive;
+  position: relative;
+  width: fit-content;
+  margin-inline: auto;
+}
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 70%;
+  background-color: #fec260;
+  z-index: -1;
+  transition: top 0.4s ease-in-out;
+}
+h1:hover:after {
+  top: 35%;
+}
+
+h2 {
+  font-family: "Righteous", cursive;
+  background: rgb(69, 166, 91);
+  background: linear-gradient(
+    90deg,
+    rgba(69, 166, 91, 1) 0%,
+    rgba(177, 172, 73, 1) 100%
+  );
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.form-section {
+  border-top: 2px dotted black;
+  border-bottom: 2px dotted black;
+}
+
+.form-control:focus {
+  border-color: #d99c39;
+  box-shadow: 0 0 0 0.25rem #fec26055;
+}
+
+.btn {
+    border: none;
+}
+
+.btn-danger {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #eb1d36;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #d30820;
+}
+
+.btn-success {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #9eb23b;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #8a9e23;
+}
+
+.btn-info {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #d1512d;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #bb4120; 
+}
