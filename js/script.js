@@ -49,13 +49,13 @@ function clearform() {
 }
 
 function foundName() {
+  var result;
   for (var i = 0; i < webSites.length; i++) {
-    if(webName.value.toLowerCase() == webSites[i].name) {
-      return true
-    }else {
-      return false
+    if (webName.value.toLowerCase() == webSites[i].name) {
+      return true;
     }
-  } 
+  }
+  return false;
 }
 
 function addWebSite() {
@@ -65,9 +65,9 @@ function addWebSite() {
       url: webUrl.value.toLowerCase(),
     };
     if (webSite.url.includes("https://") != true) {
-        webSite.url = "https://" + webUrl.value;
-      }
-    if(foundName() != true) {
+      webSite.url = "https://" + webUrl.value;
+    }
+    if (foundName() != true) {
       webSites.push(webSite);
       displayWebSites(webSites);
       localPush(webSites);
