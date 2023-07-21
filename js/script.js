@@ -64,7 +64,10 @@ function addWebSite() {
       name: webName.value.toLowerCase(),
       url: webUrl.value.toLowerCase(),
     };
-    if (webSite.url.includes("https://") != true) {
+    if (
+      webSite.url.includes("https://") != true &&
+      webSite.url.includes("http://") != true
+    ) {
       webSite.url = "https://" + webUrl.value;
     }
     if (foundName() != true) {
